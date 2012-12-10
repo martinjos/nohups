@@ -35,5 +35,5 @@ _complete_a () {
 	#i=$((i+1))
     #done
 }
-complete -F _complete_a a sudoa
+complete -F _complete_a nohups a sudoa
 #complete -c -d -f a sudoa
