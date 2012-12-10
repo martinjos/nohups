@@ -1,0 +1,26 @@
+#!/bin/bash
+
+nohupsdir="$HOME/.nohups.d" 
+
+if [ ! -d "$nohupsdir" ]; then
+    mkdir "$nohupsdir"
+fi
+
+if [ ! -d "$nohupsdir" ]; then
+    echo "Could not create directory $nohupsdir; using current directory" >&2
+    nohupsdir=.
+fi
+
+date="`date +'%F_%T_%Z'`"
+prefix="$nohupsdir/${date}_$1"
+
+#echo "Appending output to '$prefix.out' and errors to '$prefix.err'" >&2
+
+"$@" >> "$prefix.out" 2>> "$prefix.err" &
+
+# print out process id of new job
+jobs -l %% | awk '{ print $2 }'
+
+# seems not strictly necessary, perhaps because the shell knows it is running a
+# script
+disown %% 
