@@ -1,7 +1,5 @@
 # source this within .bashrc
 
-a () { nohups "$@" ; }
-sudoa () { sudo -i "`which nohups`" "$@" ; }
 _complete_a () {
     cur="${COMP_WORDS[$COMP_CWORD]}"
     if [ $COMP_CWORD = 1 ]; then

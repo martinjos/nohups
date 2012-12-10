@@ -1,11 +1,9 @@
 INSTALLATION
 
-Put "nohups" somewhere on your path.
-Source nohups.sh within bashrc.
-This will register two new bash functions: "a" and "sudoa" (both implemented
-in terms of the "nohups" script).
-It will also register completion callbacks for the shell so that it respects
-their semantics.
+Run "sudo make install". This will install "nohups", "a" and "sudoa" commands
+to /usr/local/bin.
+Source nohups.sh within bashrc, to register completion callbacks for the new
+commands.
 
 USAGE
 
