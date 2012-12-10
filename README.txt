@@ -9,7 +9,7 @@ their semantics.
 
 USAGE
 
-nohup gedit filename.txt => opens a gedit as the current user
+nohups gedit filename.txt => opens a gedit as the current user
 a gedit filename.txt => same as using nohups
 sudoa gedit filename.txt => opens a gedit as root (using sudo)
 
