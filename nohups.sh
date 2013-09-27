@@ -18,7 +18,8 @@ _complete_a () {
     {
 	i=0
 	while read LINE; do
-	    COMPREPLY[$i]="$LINE"
+	    # %q quotes spaces, etc.
+	    COMPREPLY[$i]="$(printf "%q" "$LINE")"
 	    #echo "Got $i: ${COMPREPLY[$i]}"
 	    i=$((i+1))
 	done
